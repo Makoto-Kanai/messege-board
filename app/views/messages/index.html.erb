@@ -1,3 +1,6 @@
+
+<!--ここからオリジナル-->
+
 <div class="panel panel-default">
   <div class="panel-heading">
     メッセージ一覧
@@ -13,13 +16,26 @@
 </div>
 
 
-<%= form_for(Message.new, html: {class: "form-horizontal"}) do |f| %>
+<%= form_for(@message, html: {class: "form-horizontal"}) do |f| %>
+
+  <% if @message.errors.present? %>
+    <div class="alert alert-danger">
+      <%= alert %>
+      <ul>
+        <% @message.errors.full_messages.each do |full_message| %>
+          <li>
+            <%= full_message %>
+          </li>
+        <% end %> 
+      </ul>
+    </div>
+  <% end %>
 
   
     <div class="form-group">
-    <label for="nameid" class="col-sm-2 control-label">名前：</label>
+    <label for="nameid" class="col-sm-2 control-label">名前:</label>
     <div class="col-sm-10">
-    <%= f.text_field :name, class: "form-control" %>
+<%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
 
