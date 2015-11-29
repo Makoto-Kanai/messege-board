@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     メッセージ一覧
-  </div>
+ 	</div>
     
   <div class="panel-body">
     <% @messages.each do |message| %>
@@ -16,7 +16,7 @@
 <%= form_for(Message.new, html: {class: "form-horizontal"}) do |f| %>
 
   
-    <div class="form-group">
+  <div class="form-group">
     <label for="nameid" class="col-sm-2 control-label">名前：</label>
     <div class="col-sm-10">
     <%= f.text_field :name, class: "form-control" %>
@@ -25,8 +25,9 @@
 
   <div class="form-group">
      <label for="contentid" class="col-sm-2 control-label">内容:</label>
+     
     <div class="col-sm-10">
-    <%= f.text_area :body, class: "form-control", id: "contentid" %>
+    		<%= f.text_area :body, class: "form-control", id: "contentid" %>
     </div>
  </div>
  
