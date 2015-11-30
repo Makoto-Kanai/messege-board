@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   #作成してコメント
   #root 'messege#index'
   root to: 'messages#index'
+  
   #get 'messages#index'
   
   #作成してコメント
   #resources :messages , only: [:create]
-  resources :messages
+  resources :messages , except: [:index, :new] #index,newアクションを作成しないようにする。
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
