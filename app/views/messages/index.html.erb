@@ -14,9 +14,22 @@
       <br>
     <% end %>
   </div>
+  
+  # あとから追加
+  
+  <div class="container">
+    <% if notice %>
+      <div class="alert alert-info">
+        <%= notice %>
+      </div>
+    <% end %>
+    
+    <%= yield %>
+  </div>
+  
 </div>
 
-<% #部分テンプレートを読み込んでいる %>
+<%#部分テンプレートを読み込んでいる %>
 <%= render 'form' %>
 
 

@@ -6,20 +6,7 @@ class MessagesController < ApplicationController
     
   end
 
-  ## ここから追記
-  
-=begin  
-  def create
-    @message = Message.new(message_params)
-    @message.save
-    redirect_to root_path , notice: 'メッセージを保存しました'
-  end
-=end
-
-  
-  
-
-  #ここからバリデーション登録
+   #ここからバリデーション登録
 
   
   def create
@@ -40,7 +27,4 @@ class MessagesController < ApplicationController
       params.require(:message).permit(:name, :body)
     end
     
-    
-  
 end
-
