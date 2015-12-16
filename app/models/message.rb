@@ -9,6 +9,6 @@ class Message < ActiveRecord::Base
   # 内容は必須入力かつ2文字以上30文字以下
   validates :body , length: { minimum: 2, maximum: 30 } , presence: true 
   #年齢は０歳以上
-  validates :age , numericality: { greater_than: 0 } , presence: true
+  validates :age , numericality: { greater_than_or_equal_to: 0 } , presence: true
     
 end
